@@ -31,6 +31,13 @@ EOF
    23  ipa
    24  ipa -
    25  kubeadm init --pod-network-cidr=10.244.0.0/16      (used flannel networking)
+   
+   if got error to init the master use below commands:
+   
+   rm /etc/containerd/config.toml
+systemctl restart containerd
+kubeadm init
+   
    26  kubectl get nodes
    27  kubectl get podes
    28  kubectl get pods
